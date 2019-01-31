@@ -14,3 +14,4 @@ Route list:
 
 Depedencies :
 - [Viper](https://github.com/spf13/viper)
+- [CORS](https://github.com/gin-contrib/cors)
