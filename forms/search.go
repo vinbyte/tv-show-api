@@ -18,9 +18,15 @@ type searchShow struct {
 	Premiered    string         `json:"premiered"`
 	OfficialSite string         `json:"officialSite"`
 	Schedule     searchSchedule `json:"schedule"`
+	Image        searchImage    `json:"image"`
 }
 
 type searchSchedule struct {
 	Time string   `json:"time"`
 	Days []string `json:"days"`
+}
+
+type searchImage struct {
+	Medium   string `json:"medium"`
+	Original string `json:"original"`
 }

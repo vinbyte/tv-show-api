@@ -5,6 +5,7 @@ import (
 
 	"github.com/501army/go-tv-show/controllers"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )
@@ -60,6 +61,10 @@ func main() {
 	}
 	router := gin.Default()
 	// router.Use(middleware())
+	config := cors.DefaultConfig()
+	// config.AllowOrigins == []string{"http://google.com", "http://facebook.com"}
+	config.AllowAllOrigins = true
+	router.Use(cors.New(config))
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "Welcome to my API",
